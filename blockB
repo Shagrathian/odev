@@ -1,0 +1,96 @@
+import java.util.Scanner;
+
+public class BlockB {
+
+    Scanner scanner = new Scanner(System.in);
+
+    public void saleblockB() {
+        System.out.print("(1) 1+1\n" +
+                "(2) 2+1\n" +
+                "(3) 3+1\n" +
+                "Which house type you prefer (1,2,3) : ");
+
+        String choose_A = scanner.nextLine();
+
+        if (choose_A.equals("1")) {
+            double base_price = 50000;
+            System.out.print("Select storey(max 8) : ");
+            int select_storey = scanner.nextInt();
+            base_price = base_price + base_price / 100 * 2.00 * select_storey;
+            System.out.println("Your house price with furnished  : " + (base_price +13000));
+            base_price = base_price + 13000;
+            double kdv = base_price / 100;
+            if (base_price > 100000){
+                kdv = kdv*8;
+                System.out.println("%8 KDV costs : " + kdv);
+
+
+            }
+            else {
+                System.out.println("1% KDV costs : " + kdv);
+            }
+
+            System.out.println("You select Block B , 1+1 type on floor" + select_storey +
+                    " furnished house with total cost : " + (base_price + kdv));
+
+
+        }
+        if (choose_A.equals("2")) {
+            double base_price = 72000;
+            System.out.print("Select storey(max 8) : ");
+            int select_storey = scanner.nextInt();
+            base_price = base_price + base_price / 100 * 1.70 * select_storey;
+            System.out.println("Your house price without furnished  : " + base_price);
+            double kdv = base_price / 100;
+            if (base_price > 100000){
+                kdv = kdv*8;
+                System.out.println("%8 KDV costs : " + kdv);
+
+
+            }
+            else {
+                System.out.println("1% KDV costs : " + kdv);
+            }
+
+            System.out.println("You select Block B , 2+1 type on floor" + select_storey +
+                    "house with total cost : " + (base_price + kdv));
+
+        }
+        if (choose_A.equals("3")) {
+            double base_price = 97500;
+            System.out.print("Select storey(max 8) : ");
+            int select_storey = scanner.nextInt();
+            base_price = base_price + base_price / 100 * 1.75 * select_storey;
+            String furnitured;
+            System.out.println("Do you furnished house ? (Y,N) : ");
+            String choose = scanner.nextLine();
+            if (choose.equals("Y")){
+
+                base_price = base_price +26000;
+                System.out.println("Your house price with furnished  : " + base_price);
+                furnitured ="furnitured";
+            }
+            else {
+                System.out.println("Your house price without furnished  : " + base_price);
+                furnitured = "";
+            }
+
+
+            double kdv = base_price / 100;
+            if (base_price > 100000){
+                kdv = kdv*8;
+                System.out.println("%8 KDV costs : " + kdv);
+
+
+            }
+            else {
+                System.out.println("1% KDV costs : " + kdv);
+            }
+
+            System.out.println("You select Block B , 3+1 type on floor" + select_storey + furnitured +
+                    "house with total cost : " + (base_price + kdv));
+
+
+        }
+    }
+}

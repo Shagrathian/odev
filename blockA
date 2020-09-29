@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class BlockA {
+    Scanner scanner = new Scanner(System.in);
+    /*1+1 45000 - 1.65 %
+    10
+     2+1 65000 s 1.74 %
+*/
+    //Base Price * Storey Value/100
+
+
+    public void saleblockA(){
+        System.out.print("(1) 1+1\n" +
+                "(2) 2+1\n" +
+                "Which house type you prefer (1,2) : ");
+
+        String choose_A = scanner.nextLine();
+
+        if (choose_A.equals("1")){
+            double base_price = 45000;
+            System.out.print("Select storey(max 10) : ");
+            double select_storey = scanner.nextInt();
+            base_price = base_price + base_price /100 * 1.65 *  select_storey;
+            System.out.println("Your house price without furnished  : " + base_price);
+            double kdv =  base_price /100;
+            System.out.println("1% KDV costs : " + kdv);
+            System.out.println("You select Block A , 1+1 type on floor"+ select_storey +
+                    "house with total cost : " + (base_price + kdv) );
+
+
+
+        }
+        if (choose_A.equals("2")){
+            double base_price = 65000;
+            System.out.print("Select storey(max 10) : ");
+            double select_storey = scanner.nextInt();
+            base_price = base_price + base_price /100 * 1.74 *  select_storey;
+            System.out.println("Your house price with furnished  : " + (base_price +19000));
+            base_price = base_price +19000;
+            double kdv =  base_price /100;
+            System.out.println("1% KDV costs : " + kdv);
+            System.out.println("You select Block A , 1+1 type on floor"+ select_storey +
+                    " furnished house with total cost : " + (base_price + kdv) );
+
+        }
+
+
+
+    }
+
+}
+  

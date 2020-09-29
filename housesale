@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class main {
+
+
+        public static void main (String[] args) {
+            Scanner scanner = new Scanner(System.in);
+
+            String block = ("--- Buy a House---\n" +
+                    "Block A \n" +
+                    "Block B \n" +
+                    "Block C \n" +
+                    "Block D \n" +
+                    "Which Block you prefer? (A,B,C,D): ");
+            System.out.println(block);
+            String choose_block = scanner.nextLine();
+
+            if (choose_block.equals("A")){
+                BlockA blockA = new BlockA();
+
+                blockA.saleblockA();
+
+            }
+            if (choose_block.equals("B")){
+                BlockB blockB = new BlockB();
+
+                blockB.saleblockB();
+            }
+            if (choose_block.equals("C")){
+
+                BlockC blockC = new BlockC();
+                blockC.saleblockC();
+            }
+            if (choose_block.equals("D")){
+                BlockD blockD = new BlockD();
+                blockD.saleblockD();
+            }
+
+
+    }
+}
